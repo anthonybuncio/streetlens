@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "StreetLensHouston - Dashcam Uploader",
+  description: "StreetLens Description",
+};
+
 export default function Home() {
   return (
     <>

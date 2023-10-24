@@ -3,7 +3,7 @@
 import { Loader } from "@googlemaps/js-api-loader";
 import { useEffect, useRef } from "react";
 
-const Map = () => {
+const Map = ({ list }) => {
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +32,19 @@ const Map = () => {
         map: map,
         position: position,
       });
+
+      if (list && list.length > 0) {
+        list.map((item) => {
+          const { lat, long } = item.coords;
+          console.log(item.coords);
+          if (lat !== "" || long !== "") {
+            const marker = new Marker({
+              map: map,
+              position: { lat: lat, lng: long },
+            });
+          }
+        });
+      }
     };
 
     initMap();

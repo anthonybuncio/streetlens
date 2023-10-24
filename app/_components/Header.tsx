@@ -34,7 +34,7 @@ const Header = ({}) => {
             StreetLens
           </span>
           <span className="self-center whitespace-nowrap text-xl font-semibold">
-            Houston
+            .Houston
           </span>
         </Link>
         <div className="mt-2 sm:mt-0 sm:flex md:order-2">

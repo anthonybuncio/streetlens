@@ -36,7 +36,7 @@ const Map = ({ list }) => {
       if (list && list.length > 0) {
         list.map((item) => {
           const { lat, long } = item.coords;
-          console.log(item.coords);
+
           if (lat !== "" || long !== "") {
             const marker = new Marker({
               map: map,
@@ -52,7 +52,11 @@ const Map = ({ list }) => {
 
   return (
     <>
-      <div style={{ height: "600px" }} ref={mapRef} />
+      <div
+        // style={{ height: "800px", width: "1000px" }}
+        className=" w-4/5 h-screen"
+        ref={mapRef}
+      />
     </>
   );
 };

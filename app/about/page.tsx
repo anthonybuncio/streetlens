@@ -4,9 +4,6 @@ export default function About() {
   return (
     <>
       <div className="mt-16 py-12 bg-stone-950 text-white min-h-screen">
-        <div className="">
-          <p className="text-3xl text-center font-bold">About Us</p>
-        </div>
         <section className="">
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
@@ -176,17 +173,17 @@ export default function About() {
 
               <div className="lg:py-2">
                 <div className="relative z-10">
-                  {/* <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                  About Us
-                </h1> */}
-                  <p className="text-lg md:text-xl mb-8">
-                    At StreetLens we are passionate about helping drivers stay
+                  <h1 className="text-4xl md:text-6xl font-bold mb-4 uppercase">
+                    About Us
+                  </h1>
+                  <p className="text-lg mb-8">
+                    At Street Lens we are passionate about helping drivers stay
                     safe on the road. Our cloud shared vehicle dashcam platform
                     is designed to provide real-time access to dashcam footage
                     that can be shared amongst users, making it easier than ever
                     to stay informed and alert on the road.
                   </p>
-                  <p className="text-lg md:text-xl mb-8">
+                  <p className="text-lg mb-8">
                     Our team is made up of experienced professionals who are
                     dedicated to improving road safety through technology. With
                     a deep understanding of the unique challenges that drivers
@@ -248,10 +245,7 @@ export default function About() {
                   href="#"
                   className="mt-8 inline-flex items-center rounded border border-blue-600 bg-blue-600 px-8 py-3 text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                 >
-                  <span className="text-sm font-medium">
-                    {" "}
-                    Search our videos{" "}
-                  </span>
+                  <span className="text-sm font-medium">Search our videos</span>
 
                   <svg
                     className="ml-3 h-5 w-5"

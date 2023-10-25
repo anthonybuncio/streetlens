@@ -1,12 +1,14 @@
 import Link from "next/link";
 
+const date = new Date().getFullYear();
+
 const Footer = () => {
   return (
     <footer className="fixed bottom-0 left-0 z-20 w-full py-3 bg-zinc-900 text-white border-t border-gray-700 shadow md:flex md:items-center md:justify-between md:p-2 ">
       <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
         <div className="grid justify-center lg:justify-between">
           <div className="flex flex-col self-center text-xs text-center md:block lg:col-start-1 md:space-x-6">
-            <span>Copyright © 2023 by Apptelligence</span>
+            <span>Copyright © {date} by Apptelligence</span>
             <Link rel="noopener noreferrer" href="/privacy-policy">
               <span>Privacy policy</span>
             </Link>

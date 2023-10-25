@@ -13,7 +13,7 @@ const Videos = async () => {
 
   return (
     <>
-      <div className="mt-16 bg-gray-100 min-h-screen flex">
+      <div className="mt-16 min-h-screen flex">
         <Sidebar list={videoCollection} />
         <Map list={videoCollection} />
         {/* {!session || !session.user ? (

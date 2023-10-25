@@ -57,9 +57,9 @@ const faqData = [
 
 const Faq = () => {
   return (
-    <section className="py-12 mt-12 min-h-screen max-h-full">
+    <section className="py-12 mt-12 min-h-screen max-h-full bg-zinc-950 text-white">
       <div className="container max-w-4xl px-6 py-10 mx-auto">
-        <h1 className="text-2xl font-semibold text-center lg:text-3xl dark:text-white">
+        <h1 className="text-2xl font-semibold text-center lg:text-3xl">
           Frequently asked questions
         </h1>
 
@@ -70,11 +70,13 @@ const Faq = () => {
                 return (
                   <details
                     key={i}
-                    className="group rounded-lg bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+                    className="group rounded-lg bg-zinc-800 text-white p-6 [&_summary::-webkit-details-marker]:hidden"
                     open={i === 0}
                   >
-                    <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-                      <h2 className="font-medium">{item.question}</h2>
+                    <summary className="flex cursor-pointer items-center justify-between gap-1.5">
+                      <h2 className=" font-bold uppercase tracking-wider">
+                        {item.question}
+                      </h2>
 
                       <span className="relative h-5 w-5 shrink-0">
                         <svg
@@ -109,7 +111,7 @@ const Faq = () => {
                       </span>
                     </summary>
 
-                    <p className="mt-4 leading-relaxed text-gray-700">
+                    <p className="mt-4 leading-relaxed text-zinc-400">
                       {item.answer}
                     </p>
                   </details>

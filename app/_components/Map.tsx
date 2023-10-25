@@ -24,6 +24,7 @@ const Map = ({ list }) => {
       const mapOptions: google.maps.MapOptions = {
         center: position,
         zoom: 10,
+        mapId: "e8b874e05788a990",
       };
 
       const map = new Map(mapRef.current, mapOptions);

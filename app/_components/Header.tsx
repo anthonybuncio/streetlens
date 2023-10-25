@@ -3,7 +3,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import BlackCar from "./svg/BlackCar";
 import WhiteCar from "./svg/WhiteCar";
 
 const Header = ({}) => {
@@ -21,105 +20,107 @@ const Header = ({}) => {
             Houston
           </span> */}
         </Link>
-        <div className="mt-2 sm:mt-0 sm:flex md:order-2">
-          {/* <!-- Login Button --> */}
-          {session ? (
-            <HeaderUser user={session.user} />
-          ) : (
-            <>
-              <button
-                type="button"
-                className="mr-3 hidden border border-neutral-400 py-1.5 px-6 text-center text-sm text-white font-medium focus:outline-none md:inline-block rounded-lg"
-                onClick={() => signIn()}
-              >
-                Log In
-              </button>
-              <button
-                type="button"
-                className="mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
-                onClick={() => signIn()}
-              >
-                Register
-              </button>
-            </>
-          )}
-          <button
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="h-6 w-6"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
+        <div className="flex items-center">
+          <div className="mt-2 sm:mt-0 sm:flex md:order-2">
+            {/* <!-- Login Button --> */}
+            {session ? (
+              <HeaderUser user={session.user} />
+            ) : (
+              <>
+                <button
+                  type="button"
+                  className="mr-3 hidden border border-neutral-400 uppercase py-1.5 px-6 text-center text-xs text-white font-semibold focus:outline-none md:inline-block rounded-lg hover:bg-zinc-800 tracking-widest"
+                  onClick={() => signIn()}
+                >
+                  Log In
+                </button>
+                <button
+                  type="button"
+                  className="mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
+                  onClick={() => signIn()}
+                >
+                  Sign up for FREE!
+                </button>
+              </>
+            )}
+            <button
+              data-collapse-toggle="navbar-sticky"
+              type="button"
+              className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+              aria-controls="navbar-sticky"
+              aria-expanded="false"
             >
-              <path
-                fillRule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <div
-          className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
-          id="navbar-sticky"
-        >
-          <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:text-sm md:font-medium">
-            <li>
-              <Link
-                href="/"
-                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
+              <span className="sr-only">Open main menu</span>
+              <svg
+                className="h-6 w-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/explore"
-                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
-              >
-                Explore
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/upload"
-                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
-              >
-                Upload
-              </Link>
-            </li>
-            {/* <li>
+                <path
+                  fillRule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto md:mx-8"
+            id="navbar-sticky"
+          >
+            <ul className="mt-4 flex flex-col rounded-lg border p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:text-xs md:font-medium">
+              <li>
+                <Link
+                  href="/"
+                  className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/explore"
+                  className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                >
+                  Explore
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/upload"
+                  className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                >
+                  Upload
+                </Link>
+              </li>
+              {/* <li>
               <Link
                 href="/request"
-                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
+                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Request
               </Link>
             </li> */}
-            <li>
-              <Link
-                href="/faq"
-                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
-              >
-                FAQ
-              </Link>
-            </li>
-          </ul>
+              <li>
+                <Link
+                  href="/faq"
+                  className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                >
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

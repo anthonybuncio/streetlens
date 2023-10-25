@@ -1,64 +1,48 @@
 "use client";
-
-// import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import BlackCar from "./svg/BlackCar";
+import WhiteCar from "./svg/WhiteCar";
 
 const Header = ({}) => {
-  // const { data: session } = useSession();
+  const { data: session } = useSession();
 
   return (
-    <nav className="fixed top-0 left-0 z-20 w-full border-b border-gray-200 bg-white py-2.5 px-6 sm:px-4">
-      <div className="container mx-auto flex max-w-6xl flex-wrap items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="icon icon-tabler icon-tabler-car-crash mr-2 h-6 text-black sm:h-9"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M10 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-            <path d="M7 6l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-5m0 -6h8m-6 0v-5m2 0h-4"></path>
-            <path d="M14 8v-2"></path>
-            <path d="M19 12h2"></path>
-            <path d="M17.5 15.5l1.5 1.5"></path>
-            <path d="M17.5 8.5l1.5 -1.5"></path>
-          </svg>
-          <span className="self-center whitespace-nowrap text-xl font-semibold">
-            StreetLens
+    <nav className="fixed top-0 left-0 z-20 w-full uppercase text-neutral-400 bg-zinc-900 px-6 sm:px-4">
+      <div className="container mx-auto flex flex-wrap items-center justify-between">
+        <Link href="/" className="flex items-center text-white">
+          <WhiteCar className={"mr-2 h-8 sm:h-16"} />
+          <span className=" self-center whitespace-nowrap text-xl font-bold tracking-widest">
+            Street Lens
           </span>
-          <span className="self-center whitespace-nowrap text-xl font-semibold">
-            .Houston
-          </span>
+          {/* <span className="self-center whitespace-nowrap text-xl font-semibold">
+            Houston
+          </span> */}
         </Link>
         <div className="mt-2 sm:mt-0 sm:flex md:order-2">
           {/* <!-- Login Button --> */}
-          {/* {session ? (
+          {session ? (
             <HeaderUser user={session.user} />
           ) : (
             <>
               <button
                 type="button"
-                className="rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none md:inline-block rounded-lg"
+                className="mr-3 hidden border border-neutral-400 py-1.5 px-6 text-center text-sm text-white font-medium focus:outline-none md:inline-block rounded-lg"
                 onClick={() => signIn()}
               >
-                Login
+                Log In
               </button>
               <button
                 type="button"
-                className="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
+                className="mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none md:mr-0 md:inline-block rounded-lg"
                 onClick={() => signIn()}
               >
                 Register
               </button>
             </>
-          )} */}
+          )}
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -86,45 +70,53 @@ const Header = ({}) => {
           className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
           id="navbar-sticky"
         >
-          <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium">
+          <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:text-sm md:font-medium">
             <li>
               <Link
                 href="/"
-                className="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
+                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
               >
                 Home
               </Link>
             </li>
             <li>
               <Link
+                href="/explore"
+                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
+              >
+                Explore
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/about"
-                className="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
+                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
               >
                 About
               </Link>
             </li>
             <li>
               <Link
-                href="/videos"
-                className="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-              >
-                Videos
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/upload"
-                className="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
+                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
               >
                 Upload
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/request"
-                className="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
+                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
               >
                 Request
+              </Link>
+            </li> */}
+            <li>
+              <Link
+                href="/faq"
+                className="block rounded py-2 pl-3 pr-4 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white"
+              >
+                FAQ
               </Link>
             </li>
           </ul>
@@ -204,9 +196,9 @@ const HeaderUser = ({ user }) => {
                   href="/"
                   className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                   role="menuitem"
-                  // onClick={() => {
-                  //   signOut();
-                  // }}
+                  onClick={() => {
+                    signOut();
+                  }}
                 >
                   Logout
                 </Link>

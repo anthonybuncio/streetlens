@@ -250,7 +250,7 @@ export default function Upload() {
               </div>
               <button
                 type="submit"
-                className="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2"
+                className="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-stone-950 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2"
               >
                 <span className="w-full">Submit</span>
               </button>

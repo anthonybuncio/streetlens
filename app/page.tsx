@@ -1,19 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <section className="bg-gray-900 text-white">
-        <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+      <section className="text-white bg-[url('background.png')] bg-cover bg-center bg-no-repeat">
+        <div className="mx-auto max-w-screen-xl flex h-screen items-center">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
+            <h1 className="py-8 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
               Search Dashcam Footage.
               <span className="sm:block"> A Public Database. </span>
             </h1>
-            <p className="mx-auto mt-4 max-w-xl sm:text-xl sm:leading-relaxed">
+            <p className="mx-auto py-8 max-w-xl sm:text-xl sm:leading-relaxed">
               We are a community of dashcam owners coming together and helping
               others. Protect yourself and others with our cloud dashcam
-              database service. <br /> <br />
+              database service.
+            </p>
+            <p className="mx-auto mt-4 max-w-xl sm:text-xl sm:leading-relaxed">
               Sign up for full access today. It&apos;s{" "}
               <span className=" font-bold">FREE!</span>
             </p>

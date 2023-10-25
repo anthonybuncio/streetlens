@@ -17,8 +17,8 @@ const Map = ({ list }) => {
       const { Marker } = await loader.importLibrary("marker");
 
       const position = {
-        lat: 29.749907,
-        lng: -95.358421,
+        lat: 29.762778,
+        lng: -95.383056,
       };
 
       const mapOptions: google.maps.MapOptions = {
@@ -27,7 +27,6 @@ const Map = ({ list }) => {
       };
 
       const map = new Map(mapRef.current, mapOptions);
-
       const marker = new Marker({
         map: map,
         position: position,
@@ -35,12 +34,13 @@ const Map = ({ list }) => {
 
       if (list && list.length > 0) {
         list.map((item) => {
-          const { lat, long } = item.coords;
+          const { lat, lng } = item.coords;
 
-          if (lat !== "" || long !== "") {
+          if (lat !== "" || lng !== "") {
             const marker = new Marker({
               map: map,
-              position: { lat: lat, lng: long },
+              position: { lat: lat, lng: lng },
+              title: `${item?.streets[0]} & ${item?.streets[1]}`,
             });
           }
         });

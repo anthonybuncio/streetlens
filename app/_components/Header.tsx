@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import WhiteCar from "./svg/WhiteCar";
+import { CameraIcon } from "./svg/Icons";
 
 const Header = ({}) => {
   const { data: session } = useSession();
@@ -12,13 +13,11 @@ const Header = ({}) => {
     <nav className="fixed top-0 left-0 z-20 w-full uppercase text-neutral-400 bg-zinc-900 px-6 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link href="/" className="flex items-center text-white">
-          <WhiteCar className={"mr-2 h-8 sm:h-16"} />
+          {/* <WhiteCar className="mr-2 mt-2 h-12 sm:h-16" /> */}
+          <CameraIcon className="m-3 h-12" />
           <span className=" self-center whitespace-nowrap text-xl font-bold tracking-widest">
             Street Lens
           </span>
-          {/* <span className="self-center whitespace-nowrap text-xl font-semibold">
-            Houston
-          </span> */}
         </Link>
         <div className="flex items-center">
           <div className="mt-2 sm:mt-0 sm:flex md:order-2">
@@ -181,6 +180,7 @@ const HeaderUser = ({ user }) => {
               <div className="p-2">
                 <Link
                   href="/account"
+                  onClick={() => setUserMenu(!userMenu)}
                   className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                   role="menuitem"
                 >
@@ -189,6 +189,7 @@ const HeaderUser = ({ user }) => {
 
                 <Link
                   href="/messages"
+                  onClick={() => setUserMenu(!userMenu)}
                   className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                   role="menuitem"
                 >

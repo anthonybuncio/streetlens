@@ -1,6 +1,6 @@
 export default function Policy() {
   return (
-    <div className="py-12 mt-16 bg-gray-100">
+    <div className="py-12 mt-16 bg-zinc-950 text-white">
       <div className="">
         <p className="text-3xl text-center font-bold">Privacy Policy</p>
       </div>

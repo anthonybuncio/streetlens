@@ -1,11 +1,11 @@
 // https://www.svgrepo.com/svg/408290/car-white
-const WhiteSuv = ({ className }) => {
+const WhiteSuv = (props) => {
   return (
     <svg
       viewBox="0 -144 1011 1011"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g

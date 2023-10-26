@@ -51,7 +51,7 @@ export default function Upload() {
 
   return (
     <>
-      <div className="flex flex-wrap w-full bg-gray-100">
+      <div className="flex flex-wrap w-full bg-stone-950 text-white">
         <div className="flex flex-col w-full md:w-1/2">
           <div className="flex flex-col justify-center px-8 py-16 my-auto md:justify-start md:pt-0 md:px-6 lg:px-24">
             <p className="text-3xl text-center">Upload A Video</p>

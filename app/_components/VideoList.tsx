@@ -12,7 +12,7 @@ const VideoList = ({ itemData }) => {
 
   return (
     <a href={itemData.video_url} target="_blank" rel="noopener noreferrer">
-      <button className="flex items-center justify-start w-full px-2 rounded-sm transition-colors duration-200 gap-x-2 hover:bg-zinc-800 focus:outline-none">
+      <button className="flex items-stretch w-full px-2 rounded-sm transition-colors duration-200 gap-x-2 hover:bg-zinc-800 focus:outline-none">
         <div className="flex items-center justify-start w-full">
           <svg
             fill="#ffffff"
@@ -25,11 +25,11 @@ const VideoList = ({ itemData }) => {
             xmlSpace="preserve"
             stroke="#ffffff"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
               <g transform="translate(0 -540.36)">
@@ -58,15 +58,15 @@ const VideoList = ({ itemData }) => {
           </div>
         </div>
         <div className="flex flex-row justify-end w-full">
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between items-end p-2">
             <p className="text-xs text-zinc-500">{dateStr}</p>
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1}
+              strokeWidth={1.5}
               stroke="currentColor"
-              className="w-4 h-4"
+              className="w-3 h-3 text-yellow-600"
             >
               <path
                 strokeLinecap="round"

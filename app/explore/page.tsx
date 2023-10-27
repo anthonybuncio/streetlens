@@ -8,7 +8,7 @@ async function getServerSideProps() {
   return res.json();
 }
 
-const Videos = async () => {
+const Explore = async () => {
   const { videoCollection } = await getServerSideProps();
 
   return (
@@ -25,4 +25,4 @@ const Videos = async () => {
     </>
   );
 };
-export default Videos;
+export default Explore;

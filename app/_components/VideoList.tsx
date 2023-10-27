@@ -1,5 +1,4 @@
 const VideoList = ({ itemData }) => {
-  console.log(itemData);
   // const dateStr = new Date(itemData.date * 1000).toLocaleString();
   // const uploadStr = new Date(itemData.submitted_at * 1000).toLocaleDateString();
   const dateStr = new Date(itemData.date * 1000).toLocaleTimeString([], {
@@ -13,7 +12,7 @@ const VideoList = ({ itemData }) => {
   return (
     <a href={itemData.video_url} target="_blank" rel="noopener noreferrer">
       <button className="flex items-stretch w-full px-2 rounded-sm transition-colors duration-200 gap-x-2 hover:bg-zinc-800 focus:outline-none">
-        <div className="flex items-center justify-start w-full">
+        <div className="flex items-center justify-start w-full ">
           <svg
             fill="#ffffff"
             className="object-cover w-8 h-8 m-2 rounded-full"
@@ -57,7 +56,7 @@ const VideoList = ({ itemData }) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row justify-end w-full">
+        <div className="flex flex-row justify-end w-full ">
           <div className="flex flex-col justify-between items-end p-2">
             <p className="text-xs text-zinc-500">{dateStr}</p>
             {/* <svg

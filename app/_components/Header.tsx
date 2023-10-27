@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import WhiteCar from "./svg/WhiteCar";
-import { CameraIcon } from "./svg/Icons";
+import { ApatureIcon, CameraIcon, TireIcon } from "./svg/Icons";
 
 const Header = ({}) => {
   const { data: session } = useSession();
@@ -13,8 +13,8 @@ const Header = ({}) => {
     <nav className="fixed top-0 left-0 z-20 w-full uppercase text-neutral-400 bg-zinc-900 px-6 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link href="/" className="flex items-center text-white">
-          {/* <WhiteCar className="mr-2 mt-2 h-12 sm:h-16" /> */}
-          <CameraIcon className="m-3 h-12" />
+          <WhiteCar className="mr-2 mt-2 h-12 sm:h-16" />
+          {/* <ApatureIcon className="m-3 h-10" /> */}
           <span className=" self-center whitespace-nowrap text-xl font-bold tracking-widest">
             Street Lens
           </span>

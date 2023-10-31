@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import WhiteCar from "./svg/WhiteCar";
-import { ApatureIcon, CameraIcon, TireIcon } from "./svg/Icons";
+import { ApatureIcon } from "./svg/Icons";
 
 const Header = ({}) => {
   const { data: session } = useSession();

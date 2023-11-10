@@ -17,12 +17,15 @@ const Explore = async () => {
     <>
       <div className="mt-16 min-h-screen flex">
         <Sidebar list={videoCollection} />
-        {/* <Map list={videoCollection} /> */}
-        {!session || !session.user ? (
+        <Map list={videoCollection} />
+
+        {/* Require session to display map */}
+
+        {/* {!session || !session.user ? (
           <h1>Map cannot be loaded right now, sorry.</h1>
         ) : (
           <Map list={videoCollection} />
-        )}
+        )} */}
       </div>
     </>
   );

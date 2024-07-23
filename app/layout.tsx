@@ -6,6 +6,7 @@ import Footer from "@/app/_components/Footer";
 import { useEffect } from "react";
 import { getServerSession } from "next-auth";
 import SessionProvider from "./_components/SessionProvider";
+import NavBar from "./_components/NavBar";
 
 const myFont = Manrope({ subsets: ["latin"] });
 
@@ -28,7 +29,8 @@ export default async function RootLayout({
       <body className={myFont.className}>
         <SessionProvider session={session}>
           <main>
-            <Header />
+            {/* <Header /> */}
+            <NavBar />
             {children}
             <Footer />
           </main>

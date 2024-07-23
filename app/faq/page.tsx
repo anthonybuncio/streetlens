@@ -57,7 +57,7 @@ const faqData = [
 
 const Faq = () => {
   return (
-    <section className="py-12 mt-12 min-h-screen max-h-full bg-zinc-950 text-white">
+    <section className="py-12 min-h-screen max-h-full bg-zinc-950 text-white">
       <div className="container max-w-4xl px-6 py-10 mx-auto">
         <h1 className="text-2xl font-semibold text-center lg:text-3xl">
           Frequently asked questions

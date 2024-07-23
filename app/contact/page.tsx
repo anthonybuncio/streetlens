@@ -27,7 +27,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="py-12 mt-16 min-h-screen bg-zinc-950 text-white">
+    <div className="py-12 min-h-screen bg-zinc-950 text-white">
       <div className="">
         <p className="text-3xl text-center font-bold">Contact Us</p>
       </div>

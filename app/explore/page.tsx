@@ -16,7 +16,7 @@ const Explore = async () => {
   console.log(videoCollection);
   return (
     <>
-      <div className="mt-16 min-h-screen flex">
+      <div className="min-h-screen flex">
         <Sidebar list={videoCollection} />
         <Map list={videoCollection} />
 

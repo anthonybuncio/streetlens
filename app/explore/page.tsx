@@ -1,6 +1,7 @@
 import Map from "@/app/_components/Map";
 import Sidebar from "../_components/Sidebar";
 import { getServerSession } from "next-auth";
+import { getVideos } from "./actions";
 
 async function getServerSideProps() {
   const res = await fetch(`http://localhost:3000/api/data`, {
@@ -10,9 +11,9 @@ async function getServerSideProps() {
 }
 
 const Explore = async () => {
-  const { videoCollection } = await getServerSideProps();
+  const { videoCollection } = await getVideos();
   const session = await getServerSession();
-
+  console.log(videoCollection);
   return (
     <>
       <div className="mt-16 min-h-screen flex">

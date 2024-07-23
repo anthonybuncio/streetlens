@@ -32,7 +32,7 @@ const Map = ({ list }) => {
         disableDefaultUI: true,
       };
 
-      const map = new Map(mapRef.current, mapOptions);
+      const map = new Map(mapRef.current as HTMLDivElement, mapOptions);
       const infoWindow = new InfoWindow();
       // const marker = new Marker({
       //   map: map,

@@ -10,7 +10,7 @@ import NavBar from "./_components/NavBar";
 const myFont = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Street Lens Houston - Dashcam Uploader",
+  title: "Houston - StreetLens: Dashcam Uploader",
   description: "Street Lens Description",
   icons: {
     icon: "icon.png",

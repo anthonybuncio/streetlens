@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import WhiteCar from "./svg/WhiteCar";
 import { signIn } from "next-auth/react";
-import { ApatureIcon } from "./svg/Icons";
+import { DriverPovIcon } from "./svg/Icons";
 
 // https://merakiui.com/components/application-ui/navbars
 const NavBar = () => {
@@ -11,16 +11,21 @@ const NavBar = () => {
 
   return (
     <nav className="relative uppercase text-neutral-400 bg-zinc-900">
-      <div className="px-2 sm:px-4 lg:max-w-screen-2xl mx-auto">
+      <div className="px-4 sm:px-4 lg:max-w-screen-2xl mx-auto">
         <div className="sm:w-full md:flex md:items-center md:justify-between">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center text-white">
-              <WhiteCar className="mr-2 mt-2 h-12 sm:h-16" />
+              {/* <WhiteCar className="mr-2 mt-2 h-12 sm:h-16" /> */}
 
-              {/* <ApatureIcon className="m-3 h-10" /> */}
-              <span className=" self-center whitespace-nowrap text-lg md:text-xl lg:text-2xl font-bold tracking-widest">
-                Street Lens
-              </span>
+              <DriverPovIcon className="m-3 h-8 sm:h-12" />
+              <div className="flex flex-col">
+                <h1 className="self-center whitespace-nowrap text-lg md:text-xl lg:text-2xl font-bold tracking-wide leading-none">
+                  Street Lens
+                </h1>
+                {/* <span className="text-neutral-400 text-sm md:text-lg tracking-widest leading-none">
+                  New York
+                </span> */}
+              </div>
             </Link>
 
             {/* Mobile menu button */}

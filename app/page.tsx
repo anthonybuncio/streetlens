@@ -5,26 +5,33 @@ export default function Home() {
   return (
     <>
       <section className="text-white bg-[url('background.png')] bg-cover bg-center bg-no-repeat">
-        <div className="mx-auto max-w-screen-xl flex h-screen items-center -mt-20">
+        <div className="mx-auto max-w-screen-md flex h-screen items-center -mt-20">
           <div className="container flex flex-col items-center px-4 py-4 mx-auto text-center">
             <div className="text-4xl font-bold md:text-5xl">
-              <h1 className="">Search Dashcam Footage.</h1>
-              <h2 className="block">
-                A{" "}
+              <h1 className="py-2 uppercase">
+                Protect Yourself and Others using{" "}
+                <span className="bg-gradient-to-tr from-rose-300 via-blue-200 to-green-900 bg-clip-text font-extrabold text-transparent">
+                  Street Lens
+                </span>
+                .
+              </h1>
+              <h2 className="block text-xl text-neutral-400">
+                Search unlimited local dashcam footage from a completely
+                user-sourced,{" "}
                 <span className=" bg-white bg-opacity-90 text-black uppercase tracking-wider whitespace-pre">
-                  {` Public `}
+                  {` public `}
                 </span>{" "}
-                Database.
+                database.
               </h2>
             </div>
 
-            <p className="mx-auto py-4 max-w-lg sm:text-xl sm:leading-relaxed">
+            {/* <p className="mx-auto py-4 max-w-lg sm:text-xl sm:leading-relaxed">
               We are a community of dashcam owners coming together and helping
               others. Protect yourself and others with our cloud dashcam
               database service.
-            </p>
-            <p className="mx-auto mt-4 max-w-xl sm:text-lg sm:leading-relaxed">
-              Sign up for full access today. It&apos;s{" "}
+            </p> */}
+            <p className="mx-auto mt-4 py-4 max-w-xl sm:text-lg sm:leading-relaxed">
+              Join today for full access. It&apos;s{" "}
               <span className=" font-bold">FREE!</span>
             </p>
 

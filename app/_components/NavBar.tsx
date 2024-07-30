@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import WhiteCar from "./svg/WhiteCar";
 import { signIn } from "next-auth/react";
+import { ApatureIcon } from "./svg/Icons";
 
 // https://merakiui.com/components/application-ui/navbars
 const NavBar = () => {
@@ -10,11 +11,12 @@ const NavBar = () => {
 
   return (
     <nav className="relative uppercase text-neutral-400 bg-zinc-900">
-      <div className="px-2 sm:px-4 lg:max-w-7xl mx-auto">
+      <div className="px-2 sm:px-4 lg:max-w-screen-2xl mx-auto">
         <div className="sm:w-full md:flex md:items-center md:justify-between">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center text-white">
               <WhiteCar className="mr-2 mt-2 h-12 sm:h-16" />
+
               {/* <ApatureIcon className="m-3 h-10" /> */}
               <span className=" self-center whitespace-nowrap text-lg md:text-xl lg:text-2xl font-bold tracking-widest">
                 Street Lens
@@ -69,36 +71,36 @@ const NavBar = () => {
                 : "opacity-0 -translate-x-full"
             }`}
           >
-            <div className="flex flex-col -mx-6 md:flex-row md:items-center sm:mx-2 lg:mx-8">
-              <a
-                href="/"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
-              >
-                Home
-              </a>
+            <div className="flex flex-col -mx-6 md:flex-row md:items-center md:mx-2 lg:mx-8">
               <a
                 href="/explore"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Explore
               </a>
               <a
                 href="/about"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 About
               </a>
               <a
+                href="/"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+              >
+                Premium
+              </a>
+              <a
                 href="/upload"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Upload
               </a>
               <a
                 href="faq"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
-                FAQ
+                Blog
               </a>
             </div>
 
@@ -143,15 +145,9 @@ const NavBar = () => {
 
               <a
                 href="/login"
-                className="py-2 md:mx-2 mt-2 text-white transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
+                className="md:hidden py-2 md:mx-3 mt-2 text-white transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Login
-              </a>
-              <a
-                href="/login"
-                className=" md:hidden py-2 md:mx-3 mt-2 text-white transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
-              >
-                Sign up
               </a>
 
               <button
@@ -159,7 +155,7 @@ const NavBar = () => {
                 className="hidden md:mx-3 transition-colors duration-300 transform text-white font-semibold md:block border uppercase py-1.5 px-4 text-center focus:outline-none rounded-lg hover:bg-zinc-800 tracking-widest"
                 onClick={() => signIn()}
               >
-                Sign up
+                Login
               </button>
             </div>
           </div>

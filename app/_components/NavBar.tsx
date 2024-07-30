@@ -10,23 +10,23 @@ const NavBar = () => {
 
   return (
     <nav className="relative uppercase text-neutral-400 bg-zinc-900">
-      <div className="container px-4 lg:px-12 mx-auto">
-        <div className="lg:flex lg:items-center lg:justify-between">
+      <div className="px-2 sm:px-4 lg:max-w-7xl mx-auto">
+        <div className="sm:w-full md:flex md:items-center md:justify-between">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center text-white">
               <WhiteCar className="mr-2 mt-2 h-12 sm:h-16" />
               {/* <ApatureIcon className="m-3 h-10" /> */}
-              <span className=" self-center whitespace-nowrap text-xl font-bold tracking-widest">
+              <span className=" self-center whitespace-nowrap text-lg md:text-xl lg:text-2xl font-bold tracking-widest">
                 Street Lens
               </span>
             </Link>
 
             {/* Mobile menu button */}
-            <div className="flex lg:hidden">
+            <div className="flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                className="text-gray-500 px-2 hover:text-gray-600 focus:outline-none focus:text-gray-600"
                 aria-label="toggle menu"
               >
                 {!isOpen ? (
@@ -63,48 +63,48 @@ const NavBar = () => {
 
           {/* Mobile Menu */}
           <div
-            className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out text-neutral-400 bg-zinc-900 lg:text-xs lg:font-medium lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
+            className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out text-neutral-400 bg-zinc-900 md:text-xs md:font-medium md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center ${
               isOpen
                 ? "translate-x-0 opacity-100"
                 : "opacity-0 -translate-x-full"
             }`}
           >
-            <div className="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
+            <div className="flex flex-col -mx-6 md:flex-row md:items-center sm:mx-2 lg:mx-8">
               <a
                 href="/"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100 lg:p-0 lg:hover:bg-transparent lg:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Home
               </a>
               <a
                 href="/explore"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100 lg:p-0 lg:hover:bg-transparent lg:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Explore
               </a>
               <a
                 href="/about"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100 lg:p-0 lg:hover:bg-transparent lg:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 About
               </a>
               <a
                 href="/upload"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100 lg:p-0 lg:hover:bg-transparent lg:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Upload
               </a>
               <a
                 href="faq"
-                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100 lg:p-0 lg:hover:bg-transparent lg:hover:text-white tracking-widest font-semibold"
+                className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 FAQ
               </a>
             </div>
 
-            <div className="flex flex-col items-start lg:flex-row lg:items-center mt-4 lg:mt-0 uppercase">
+            <div className="flex flex-col items-start md:flex-row md:items-center mt-4 md:mt-0 uppercase">
               {/* <button
-                className="hidden mx-4 text-gray-600 transition-colors duration-300 transform lg:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
+                className="hidden mx-4 text-gray-600 transition-colors duration-300 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
                 aria-label="show notifications"
               >
                 <svg
@@ -136,30 +136,30 @@ const NavBar = () => {
                   />
                 </div>
 
-                <h3 className="mx-2 text-gray-700 dark:text-gray-200 lg:hidden">
+                <h3 className="mx-2 text-gray-700 dark:text-gray-200 md:hidden">
                   Anthony B
                 </h3>
               </button> */}
 
               <a
                 href="/login"
-                className="py-2 lg:mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100 lg:p-0 lg:hover:bg-transparent lg:hover:text-white tracking-widest font-semibold"
+                className="py-2 md:mx-2 mt-2 text-white transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Login
               </a>
               <a
                 href="/login"
-                className=" lg:hidden py-2 lg:mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 hover:bg-gray-100 lg:p-0 lg:hover:bg-transparent lg:hover:text-white tracking-widest font-semibold"
+                className=" md:hidden py-2 md:mx-3 mt-2 text-white transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Sign up
               </a>
 
               <button
                 type="button"
-                className="hidden lg:mx-3 transition-colors duration-300 transform lg:block border border-neutral-400 uppercase py-1.5 px-4 text-center text-xs text-white font-semibold focus:outline-none rounded-lg hover:bg-zinc-800 tracking-widest"
+                className="hidden md:mx-3 transition-colors duration-300 transform text-white font-semibold md:block border uppercase py-1.5 px-4 text-center focus:outline-none rounded-lg hover:bg-zinc-800 tracking-widest"
                 onClick={() => signIn()}
               >
-                Sign up for FREE!
+                Sign up
               </button>
             </div>
           </div>

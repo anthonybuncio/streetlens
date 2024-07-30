@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import Header from "@/app/_components/Header";
 import Footer from "@/app/_components/Footer";
 import { useEffect } from "react";
 import { getServerSession } from "next-auth";
@@ -29,7 +28,6 @@ export default async function RootLayout({
       <body className={myFont.className}>
         <SessionProvider session={session}>
           <main>
-            {/* <Header /> */}
             <NavBar />
             {children}
             <Footer />

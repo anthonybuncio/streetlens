@@ -6,7 +6,7 @@ const Explore = async () => {
   const { videoCollection } = await getVideos();
 
   return (
-    <div className="min-h-screen flex">
+    <div className="flex overflow-hidden h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)]">
       <Sidebar list={videoCollection} />
       <Map list={videoCollection} />
     </div>

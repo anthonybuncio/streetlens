@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, Bebas_Neue, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/app/_components/Footer";
 import { getServerSession } from "next-auth";
 import SessionProvider from "./_components/SessionProvider";
 import NavBar from "./_components/NavBar";
 
-const myFont = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas",
+});
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   title: "Houston - StreetLens: Dashcam Uploader",
@@ -23,8 +33,8 @@ export default async function RootLayout({
 }) {
   const session = await getServerSession();
   return (
-    <html lang="en">
-      <body className={myFont.className}>
+    <html lang="en" className={`${manrope.variable} ${bebasNeue.variable} ${ibmPlexMono.variable}`}>
+      <body className={manrope.className}>
         <SessionProvider session={session}>
           <main>
             <NavBar />

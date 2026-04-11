@@ -47,10 +47,10 @@ const Map = ({ list }: { list: Video[] }) => {
           if (lat != null && lng != null) {
             // Customize the marker.
             const pinStyle = new PinElement({
-              background: "#616A6B",
-              borderColor: "black",
-              glyphColor: "white",
-              scale: 0.8,
+              background: "#f59e0b",
+              borderColor: "#78350f",
+              glyphColor: "#1c1917",
+              scale: 0.85,
             });
 
             const marker = new AdvancedMarkerElement({
@@ -76,13 +76,7 @@ const Map = ({ list }: { list: Video[] }) => {
   }, [list]);
 
   return (
-    <>
-      <div
-        // style={{ height: "800px", width: "1000px" }}
-        className=" w-4/5 h-screen text-black"
-        ref={mapRef}
-      />
-    </>
+    <div className="flex-1 h-full" ref={mapRef} />
   );
 };
 export default Map;

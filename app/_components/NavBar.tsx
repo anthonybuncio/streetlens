@@ -2,12 +2,13 @@
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
-import { DriverPovIcon } from "./svg/Icons";
+import { TireIcon } from "./svg/Icons";
 
 const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/explore", label: "Explore" },
   { href: "/about", label: "About" },
-  { href: "/", label: "Premium" },
+  { href: "/premium", label: "Premium" },
   { href: "/upload", label: "Upload" },
   { href: "/faq", label: "FAQ" },
 ];
@@ -21,7 +22,7 @@ const NavBar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <DriverPovIcon className="h-8 sm:h-10 text-amber-400 transition-transform duration-300 group-hover:scale-105" />
+            <TireIcon className="h-8 sm:h-10 text-amber-400 transition-transform duration-300 group-hover:scale-105" />
             <div className="flex flex-col leading-none gap-0.5">
               <span className="font-display text-white text-2xl md:text-3xl tracking-wider leading-none">
                 STREETLENS

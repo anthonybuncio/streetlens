@@ -38,14 +38,15 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-screen-xl mx-auto px-6 sm:px-10 py-20">
+        <div className="relative z-10 w-full max-w-screen-xl mx-auto px-6 sm:px-10 py-16 sm:py-20">
           <div className="max-w-3xl">
 
             {/* Live badge */}
             <div className="inline-flex items-center gap-2 mb-7 px-3 py-1.5 border border-amber-500/25 rounded bg-amber-500/[0.07] animate-fade-up">
               <span className="rec-dot w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
               <span className="font-data text-amber-400/90 text-[10px] tracking-[0.28em] uppercase">
-                Public Database · Houston, TX · 29.7604° N, 95.3698° W
+                Public Database · Houston, TX
+                <span className="hidden sm:inline"> · 29.7604° N, 95.3698° W</span>
               </span>
             </div>
 

@@ -1,16 +1,10 @@
-import Map from "@/app/_components/Map";
-import Sidebar from "../_components/Sidebar";
+import ExploreLayout from "@/app/_components/ExploreLayout";
 import { getVideos } from "./actions";
 
 const Explore = async () => {
   const { videoCollection } = await getVideos();
 
-  return (
-    <div className="flex overflow-hidden h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)]">
-      <Sidebar list={videoCollection} />
-      <Map list={videoCollection} />
-    </div>
-  );
+  return <ExploreLayout list={videoCollection} />;
 };
 
 export default Explore;

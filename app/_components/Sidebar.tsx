@@ -2,9 +2,9 @@ import type { Video } from "@/app/explore/actions";
 import Search from "./Search";
 import VideoList from "./VideoList";
 
-const Sidebar = ({ list }: { list: Video[] }) => {
+const Sidebar = ({ list, onClose }: { list: Video[]; onClose?: () => void }) => {
   return (
-    <aside className="flex flex-col w-64 lg:w-72 shrink-0 h-full bg-zinc-950 border-r border-zinc-800/60 overflow-hidden">
+    <aside className="flex flex-col w-72 md:w-64 lg:w-72 shrink-0 h-full bg-zinc-950 border-r border-zinc-800/60 overflow-hidden">
 
       {/* Header */}
       <div
@@ -17,14 +17,28 @@ const Sidebar = ({ list }: { list: Video[] }) => {
           backgroundSize: "32px 32px",
         }}
       >
-        {/* Title + count */}
+        {/* Title + count + mobile close */}
         <div className="flex items-center justify-between mb-1">
           <span className="font-display text-white text-xl tracking-wider leading-none">
             INCIDENT FEED
           </span>
-          <span className="font-data text-[9px] tracking-[0.18em] uppercase text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded">
-            {list.length} active
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="font-data text-[9px] tracking-[0.18em] uppercase text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded">
+              {list.length} active
+            </span>
+            {onClose && (
+              <button
+                type="button"
+                onClick={onClose}
+                className="md:hidden text-zinc-500 hover:text-white transition-colors"
+                aria-label="Close sidebar"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Location tag */}

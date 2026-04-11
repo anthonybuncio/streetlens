@@ -4,7 +4,6 @@ import Image from "next/image";
 
 export default function Upload() {
   const handleSubmit = async (event) => {
-    // Stop the form from submitting and refreshing the page.
     event.preventDefault();
 
     const getEpochDate =
@@ -17,19 +16,8 @@ export default function Upload() {
     ];
     const vehicleData = event.target.vehicles.value.split(",");
 
-    // Get data from the form.
-    const data = {
-      date: getEpochDate,
-      video_url: event.target.video_url.value,
-      streets: streetData,
-      vehicles: vehicleData,
-      submitted_at: Math.floor(new Date().getTime() / 1000.0),
-    };
-
-    console.log(data);
-
     try {
-      let response = await fetch("http://localhost:3000/api/upload", {
+      let response = await fetch("/api/upload", {
         method: "POST",
         body: JSON.stringify({
           date: getEpochDate,
@@ -44,7 +32,6 @@ export default function Upload() {
         },
       });
       response = await response.json();
-
       console.log(response);
     } catch (errorMessage: any) {
       console.log(errorMessage);
@@ -52,230 +39,226 @@ export default function Upload() {
   };
 
   return (
-    <>
-      <div className="flex flex-wrap w-full bg-stone-950 text-white">
-        <div className="flex flex-col w-full md:w-1/2">
-          <div className="flex flex-col justify-center px-8 py-16 my-auto md:justify-start md:pt-0 md:px-6 lg:px-24">
-            <p className="text-3xl text-center">Upload A Video</p>
+    <div className="flex min-h-screen bg-zinc-950 text-white">
 
-            <form
-              className="flex flex-col pt-3 md:pt-8"
-              onSubmit={handleSubmit}
+      {/* ── Form side ────────────────────────────────────────── */}
+      <div className="flex-1 md:w-1/2 overflow-y-auto">
+        <div
+          className="scanlines min-h-full px-8 sm:px-12 lg:px-16 py-12 lg:py-16"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(245,158,11,0.025) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(245,158,11,0.025) 1px, transparent 1px)
+            `,
+            backgroundSize: "56px 56px",
+          }}
+        >
+          {/* Page header */}
+          <div className="mb-10">
+            <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 border border-amber-500/25 rounded bg-amber-500/[0.07]">
+              <span className="rec-dot w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+              <span className="font-data text-amber-400/90 text-[10px] tracking-[0.28em] uppercase">
+                Community Report
+              </span>
+            </div>
+            <h1
+              className="font-display text-white leading-none tracking-wide"
+              style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}
             >
-              <div className="flex justify-between">
-                <div className="flex pt-4 pr-4 w-1/2">
-                  <div className="flex relative grow">
-                    <span className=" inline-flex items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="15"
-                        viewBox="0 0 24 24"
-                        strokeWidth="2"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path
-                          stroke="none"
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        ></path>
-                        <path d="M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
-                        <path d="M16 3l0 4"></path>
-                        <path d="M8 3l0 4"></path>
-                        <path d="M4 11l16 0"></path>
-                        <path d="M11 15l1 0"></path>
-                        <path d="M12 15l0 3"></path>
-                      </svg>
-                    </span>
-                    <input
-                      type="date"
-                      id="design-login-email"
-                      className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                      name="date"
-                      placeholder="Date"
-                    />
-                  </div>
-                </div>
-                <div className="flex pt-4 pl-4 w-1/2">
-                  <div className="flex relative grow">
-                    <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="icon icon-tabler icon-tabler-clock"
-                        width="15"
-                        height="15"
-                        viewBox="0 0 24 24"
-                        strokeWidth="2"
-                        stroke="currentColor"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path
-                          stroke="none"
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        ></path>
-                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                        <path d="M12 7l0 5l3 3"></path>
-                      </svg>
-                    </span>
-                    <input
-                      type="time"
-                      id="design-login-password"
-                      className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                      name="time"
-                      placeholder="Time"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col pt-4 ">
-                <div className="flex relative ">
-                  <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-link"
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path>
-                      <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path>
-                    </svg>
-                  </span>
-                  <input
-                    type="url"
-                    id="design-login-password"
-                    className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                    name="video_url"
-                    placeholder="Google Drive URL"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col pt-4 ">
-                <div className="flex relative ">
-                  <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-circle-number-1"
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                      <path d="M10 10l2 -2v8"></path>
-                    </svg>
-                  </span>
-                  <input
-                    type="text"
-                    id="design-login-password"
-                    className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                    name="street_1"
-                    placeholder="Street #1"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col pt-4">
-                <div className="flex relative ">
-                  <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-circle-number-2"
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                      <path d="M10 8h3a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h3"></path>
-                    </svg>
-                  </span>
-                  <input
-                    type="text"
-                    id="design-login-password"
-                    className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                    name="street_2"
-                    placeholder="Street #2"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col pt-4 mb-12">
-                <div className="flex relative ">
-                  <span className=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-car"
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                      <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                      <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
-                    </svg>
-                  </span>
-                  <input
-                    type="text"
-                    id="design-login-password"
-                    className=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                    name="vehicles"
-                    placeholder="List of vehicles involved - comma separated. (Red Honda CRV, White Tesla Model 3, etc.)"
-                  />
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-stone-950 shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2"
-              >
-                <span className="w-full">Submit</span>
-              </button>
-            </form>
+              SUBMIT YOUR
+              <br />
+              <span className="text-amber-400">FOOTAGE.</span>
+            </h1>
+            <p className="font-data text-zinc-500 text-xs tracking-[0.1em] mt-3 max-w-sm">
+              Help the community by reporting an incident. All fields are
+              required to place your clip on the map.
+            </p>
           </div>
-        </div>
-        <div className="w-1/2 shadow-2xl">
-          {/* <div className="hidden object-cover w-full h-screen md:block opacity-75">
-            <Image
-              src="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-              alt="profile"
-              height={100}
-              width={100}
-            />
-          </div> */}
-          <Image
-            className="hidden object-cover w-full h-screen md:block opacity-75"
-            src="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-            alt="Dashcam upload background"
-            fill
-          />
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8 max-w-lg">
+
+            {/* Section 01 — When */}
+            <fieldset className="flex flex-col gap-3">
+              <legend className="flex items-center gap-2 mb-1 w-full">
+                <span className="font-data text-amber-500/60 text-[10px] tracking-[0.2em]">01</span>
+                <span className="font-data text-amber-400/80 text-[10px] tracking-[0.2em] uppercase">
+                  When did it happen?
+                </span>
+                <div className="flex-1 h-px bg-zinc-800 ml-1" />
+              </legend>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="date" className="font-data text-zinc-500 text-[10px] tracking-[0.15em] uppercase">
+                    Date
+                  </label>
+                  <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    required
+                    className="w-full rounded bg-zinc-900/70 border border-zinc-800 text-zinc-200 font-data text-sm py-2.5 px-3 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-colors duration-150 [color-scheme:dark]"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="time" className="font-data text-zinc-500 text-[10px] tracking-[0.15em] uppercase">
+                    Time
+                  </label>
+                  <input
+                    type="time"
+                    id="time"
+                    name="time"
+                    required
+                    className="w-full rounded bg-zinc-900/70 border border-zinc-800 text-zinc-200 font-data text-sm py-2.5 px-3 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-colors duration-150 [color-scheme:dark]"
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            {/* Section 02 — Where */}
+            <fieldset className="flex flex-col gap-3">
+              <legend className="flex items-center gap-2 mb-1 w-full">
+                <span className="font-data text-amber-500/60 text-[10px] tracking-[0.2em]">02</span>
+                <span className="font-data text-amber-400/80 text-[10px] tracking-[0.2em] uppercase">
+                  Where did it happen?
+                </span>
+                <div className="flex-1 h-px bg-zinc-800 ml-1" />
+              </legend>
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="street_1" className="font-data text-zinc-500 text-[10px] tracking-[0.15em] uppercase">
+                    Street / Road #1
+                  </label>
+                  <input
+                    type="text"
+                    id="street_1"
+                    name="street_1"
+                    placeholder="e.g. Westheimer Rd"
+                    required
+                    className="w-full rounded bg-zinc-900/70 border border-zinc-800 text-zinc-200 placeholder-zinc-600 font-data text-sm py-2.5 px-3 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-colors duration-150"
+                  />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="street_2" className="font-data text-zinc-500 text-[10px] tracking-[0.15em] uppercase">
+                    Cross Street / Road #2
+                  </label>
+                  <input
+                    type="text"
+                    id="street_2"
+                    name="street_2"
+                    placeholder="e.g. Kirby Dr"
+                    className="w-full rounded bg-zinc-900/70 border border-zinc-800 text-zinc-200 placeholder-zinc-600 font-data text-sm py-2.5 px-3 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-colors duration-150"
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            {/* Section 03 — Footage */}
+            <fieldset className="flex flex-col gap-3">
+              <legend className="flex items-center gap-2 mb-1 w-full">
+                <span className="font-data text-amber-500/60 text-[10px] tracking-[0.2em]">03</span>
+                <span className="font-data text-amber-400/80 text-[10px] tracking-[0.2em] uppercase">
+                  Link to footage
+                </span>
+                <div className="flex-1 h-px bg-zinc-800 ml-1" />
+              </legend>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="video_url" className="font-data text-zinc-500 text-[10px] tracking-[0.15em] uppercase">
+                  Video URL
+                </label>
+                <input
+                  type="url"
+                  id="video_url"
+                  name="video_url"
+                  placeholder="Google Drive, YouTube, or direct link"
+                  required
+                  className="w-full rounded bg-zinc-900/70 border border-zinc-800 text-zinc-200 placeholder-zinc-600 font-data text-sm py-2.5 px-3 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-colors duration-150"
+                />
+                <p className="font-data text-zinc-600 text-[10px] tracking-[0.08em]">
+                  Make sure the link is publicly accessible before submitting.
+                </p>
+              </div>
+            </fieldset>
+
+            {/* Section 04 — Vehicles */}
+            <fieldset className="flex flex-col gap-3">
+              <legend className="flex items-center gap-2 mb-1 w-full">
+                <span className="font-data text-amber-500/60 text-[10px] tracking-[0.2em]">04</span>
+                <span className="font-data text-amber-400/80 text-[10px] tracking-[0.2em] uppercase">
+                  Vehicles involved
+                </span>
+                <div className="flex-1 h-px bg-zinc-800 ml-1" />
+              </legend>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="vehicles" className="font-data text-zinc-500 text-[10px] tracking-[0.15em] uppercase">
+                  Vehicle descriptions
+                </label>
+                <input
+                  type="text"
+                  id="vehicles"
+                  name="vehicles"
+                  placeholder="Red Honda CRV, White Tesla Model 3"
+                  className="w-full rounded bg-zinc-900/70 border border-zinc-800 text-zinc-200 placeholder-zinc-600 font-data text-sm py-2.5 px-3 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20 transition-colors duration-150"
+                />
+                <p className="font-data text-zinc-600 text-[10px] tracking-[0.08em]">
+                  Separate multiple vehicles with a comma.
+                </p>
+              </div>
+            </fieldset>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              className="flex items-center justify-center gap-2 w-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-data text-[11px] tracking-[0.2em] uppercase font-semibold py-4 rounded transition-all duration-200 hover:shadow-lg hover:shadow-amber-500/20 hover:-translate-y-px mt-2"
+            >
+              Submit Report
+              <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5">
+                <path fillRule="evenodd" d="M4.5 7.5H10.293L8.146 5.354a.5.5 0 11.708-.708l3 3a.5.5 0 010 .708l-3 3a.5.5 0 11-.708-.708L10.293 8.5H4.5a.5.5 0 010-1z" />
+              </svg>
+            </button>
+          </form>
+
+          {/* Bottom note */}
+          <p className="font-data text-zinc-700 text-[10px] tracking-[0.1em] mt-8 max-w-lg">
+            By submitting, you confirm this footage is from your own dashcam
+            and consent to it being publicly visible on StreetLens.
+          </p>
         </div>
       </div>
-    </>
+
+      {/* ── Image side ───────────────────────────────────────── */}
+      <div className="hidden md:block relative w-1/2 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+          alt="Dashcam footage at night"
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/60 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+
+        {/* Atmospheric corner text */}
+        <div className="absolute bottom-10 left-10 right-10">
+          <div className="inline-flex items-center gap-2 mb-3 px-2.5 py-1 border border-white/10 rounded bg-black/30 backdrop-blur-sm">
+            <span className="rec-dot w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+            <span className="font-data text-white/60 text-[9px] tracking-[0.25em] uppercase">
+              Community Footage · Houston, TX
+            </span>
+          </div>
+          <p className="font-display text-white/80 text-4xl xl:text-5xl leading-none tracking-wide">
+            EVERY CLIP
+            <br />
+            <span className="text-amber-400/80">COUNTS.</span>
+          </p>
+          <p className="font-data text-white/40 text-[11px] tracking-[0.1em] mt-3 max-w-xs">
+            Your dashcam footage helps keep streets safer for everyone in the
+            community.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

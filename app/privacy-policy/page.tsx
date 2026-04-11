@@ -1,10 +1,37 @@
 export default function Policy() {
   return (
-    <div className="py-12 bg-zinc-950 text-white">
-      <div className="">
-        <p className="text-3xl text-center font-bold">Privacy Policy</p>
-      </div>
-      <section className="py-10 w-1/2 m-auto">
+    <div className="bg-zinc-950 text-white min-h-screen">
+
+      {/* ── Page header ──────────────────────────────────────── */}
+      <section
+        className="scanlines relative border-b border-zinc-800/60 overflow-hidden"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(245,158,11,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,158,11,0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: "56px 56px",
+        }}
+      >
+        <div className="relative z-10 max-w-screen-xl mx-auto px-6 sm:px-10 py-16 md:py-20">
+          <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 border border-amber-500/25 rounded bg-amber-500/[0.07]">
+            <span className="rec-dot w-1.5 h-1.5 rounded-full bg-amber-400 inline-block shrink-0" />
+            <span className="font-data text-amber-400/90 text-[10px] tracking-[0.28em] uppercase">
+              Legal
+            </span>
+          </div>
+          <h1
+            className="font-display text-white leading-none tracking-wide"
+            style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}
+          >
+            PRIVACY
+            <br />
+            <span className="text-amber-400">POLICY.</span>
+          </h1>
+        </div>
+      </section>
+
+      <section className="py-10 w-full max-w-3xl mx-auto px-6 sm:px-10 lg:px-8">
         <p className="text-center font-semibold">
           Thank you for choosing our cloud sharing dashcam video platform. We
           take your privacy seriously and are committed to protecting your
@@ -123,3 +150,4 @@ export default function Policy() {
     </div>
   );
 }
+

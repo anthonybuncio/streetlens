@@ -77,36 +77,36 @@ const NavBar = () => {
             }`}
           >
             <div className="flex flex-col -mx-6 md:flex-row md:items-center md:mx-2 lg:mx-8">
-              <a
+              <Link
                 href="/explore"
                 className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Explore
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/about"
                 className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 About
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/"
                 className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Premium
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/upload"
                 className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Upload
-              </a>
-              <a
-                href="faq"
+              </Link>
+              <Link
+                href="/faq"
                 className="px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Blog
-              </a>
+              </Link>
             </div>
 
             <div className="flex flex-col items-start md:flex-row md:items-center mt-4 md:mt-0 uppercase">
@@ -148,12 +148,12 @@ const NavBar = () => {
                 </h3>
               </button> */}
 
-              <a
+              <Link
                 href="/login"
                 className="md:hidden py-2 md:mx-3 mt-2 text-white transition-colors duration-300 transform rounded-md md:mt-0 hover:bg-zinc-600 md:p-0 md:hover:bg-transparent md:hover:text-white tracking-widest font-semibold"
               >
                 Login
-              </a>
+              </Link>
 
               <button
                 type="button"

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import Footer from "@/app/_components/Footer";
-import { useEffect } from "react";
 import { getServerSession } from "next-auth";
 import SessionProvider from "./_components/SessionProvider";
 import NavBar from "./_components/NavBar";

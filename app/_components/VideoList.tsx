@@ -1,4 +1,6 @@
-const VideoList = ({ itemData }) => {
+import type { Video } from "@/app/explore/actions";
+
+const VideoList = ({ itemData }: { itemData: Video }) => {
   // const dateStr = new Date(itemData.date * 1000).toLocaleString();
   // const uploadStr = new Date(itemData.submitted_at * 1000).toLocaleDateString();
   const dateStr = new Date(itemData.date * 1000).toLocaleTimeString([], {

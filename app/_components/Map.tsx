@@ -2,8 +2,9 @@
 
 import { Loader } from "@googlemaps/js-api-loader";
 import { useEffect, useRef } from "react";
+import type { Video } from "@/app/explore/actions";
 
-const Map = ({ list }) => {
+const Map = ({ list }: { list: Video[] }) => {
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -43,7 +44,7 @@ const Map = ({ list }) => {
         list.map((item) => {
           const { lat, lng } = item.coords;
 
-          if (lat !== "" || lng !== "") {
+          if (lat != null && lng != null) {
             // Customize the marker.
             const pinStyle = new PinElement({
               background: "#616A6B",
@@ -72,7 +73,7 @@ const Map = ({ list }) => {
     };
 
     initMap();
-  }, []);
+  }, [list]);
 
   return (
     <>

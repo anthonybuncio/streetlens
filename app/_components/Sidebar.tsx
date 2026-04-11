@@ -1,7 +1,8 @@
+import type { Video } from "@/app/explore/actions";
 import Search from "./Search";
 import VideoList from "./VideoList";
 
-const Sidebar = ({ list }) => {
+const Sidebar = ({ list }: { list: Video[] }) => {
   return (
     <aside className="flex flex-col w-1/3 md:w-1/5 h-screen px-4 overflow-y-auto bg-stone-950 text-white">
       {/* <div className="h-screen py-8 overflow-y-auto bg-white border-l border-r sm:w-64 w-60 dark:bg-gray-900 dark:border-gray-700"> */}

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useSession } from "next-auth/react";
 
 const AccountPage = () => {
@@ -12,13 +13,15 @@ const AccountPage = () => {
           <div className="p-4 border-t-2 border-indigo-400 bg-zinc-900 ">
             <div className="max-w-sm mx-auto md:w-full md:mx-0">
               <div className="inline-flex items-center space-x-4">
-                <a href="#" className="relative block">
-                  <img
-                    alt="profil"
-                    src={session?.user?.image}
-                    className="mx-auto object-cover rounded-full h-16 w-16 "
+                <div className="relative block">
+                  <Image
+                    alt="Profile picture"
+                    src={session?.user?.image ?? ""}
+                    width={64}
+                    height={64}
+                    className="mx-auto object-cover rounded-full h-16 w-16"
                   />
-                </a>
+                </div>
                 <h1 className="text-white">{session?.user?.name}</h1>
               </div>
             </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Upload() {
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
@@ -266,10 +268,11 @@ export default function Upload() {
               width={100}
             />
           </div> */}
-          <img
+          <Image
             className="hidden object-cover w-full h-screen md:block opacity-75"
             src="https://images.unsplash.com/photo-1597328290883-50c5787b7c7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-            alt="profile"
+            alt="Dashcam upload background"
+            fill
           />
         </div>
       </div>

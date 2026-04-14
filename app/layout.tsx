@@ -30,11 +30,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = null;
   return (
     <html lang="en" className={`${manrope.variable} ${bebasNeue.variable} ${ibmPlexMono.variable}`}>
       <body className={manrope.className}>
-        <SessionProvider session={session}>
+        <SessionProvider>
           <main>
             <NavBar />
             {children}

@@ -10,7 +10,6 @@ const LINKS_LEFT = [
 
 const LINKS_RIGHT = [
   { href: "/upload", label: "Upload" },
-  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 

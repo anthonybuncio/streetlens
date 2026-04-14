@@ -1,4 +1,3 @@
-import { getProviders } from "next-auth/react";
 import LoginButtons from "../_components/LoginButtons";
 
 const FEATURES = [
@@ -29,9 +28,7 @@ const FEATURES = [
   },
 ];
 
-export default async function Login() {
-  const providers = await getProviders();
-
+export default function Login() {
   return (
     <div className="flex min-h-screen bg-zinc-950 text-white">
 
@@ -137,7 +134,7 @@ export default async function Login() {
           </div>
 
           {/* Buttons */}
-          <LoginButtons providers={providers} />
+          <LoginButtons />
 
           {/* Terms */}
           <p className="font-data text-zinc-600 text-[10px] tracking-[0.07em] text-center mt-6 leading-relaxed">

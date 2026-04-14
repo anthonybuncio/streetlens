@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/premium", label: "Premium" },
   { href: "/upload", label: "Upload" },
-  { href: "/faq", label: "FAQ" },
 ];
 
 const NavBar = () => {

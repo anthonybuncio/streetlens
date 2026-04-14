@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope, Bebas_Neue, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/app/_components/Footer";
-import { getServerSession } from "next-auth";
 import SessionProvider from "./_components/SessionProvider";
 import NavBar from "./_components/NavBar";
 
@@ -31,7 +30,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession();
+  const session = null;
   return (
     <html lang="en" className={`${manrope.variable} ${bebasNeue.variable} ${ibmPlexMono.variable}`}>
       <body className={manrope.className}>

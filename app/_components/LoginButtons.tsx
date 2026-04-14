@@ -1,13 +1,13 @@
 "use client";
 import { signIn } from "next-auth/react";
 
-const LoginButtons = ({ providers }) => {
+const LoginButtons = () => {
   return (
     <div className="flex flex-col gap-3 w-full">
       {/* Google */}
       <button
         type="button"
-        onClick={() => signIn(providers?.google?.id)}
+        onClick={() => signIn("google")}
         className="flex items-center justify-center gap-3 w-full bg-white hover:bg-zinc-100 text-zinc-900 font-data text-[11px] tracking-[0.15em] uppercase font-semibold py-3.5 px-5 rounded transition-all duration-150 hover:shadow-lg hover:shadow-black/30"
       >
         <svg className="w-4 h-4 shrink-0" viewBox="0 0 40 40">
